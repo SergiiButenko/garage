@@ -1,10 +1,10 @@
 [Unit]
-Description=Viber Bot service
+Description=Backend part of arduino system
 After=network.target
 Requires=network.target
 
 [Service]
-ExecStart=/usr/bin/python3 /var/www/v5/viber_bot/viber_bot.py
+ExecStart=/usr/bin/ruby /var/www/garage/web/main.irb
 
 Restart=always
 RestartSec=5
