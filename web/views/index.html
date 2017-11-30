@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Гараж">
+    <meta name="author" content="">
+    <title>Гараж</title>
+    <!-- Material Design fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Bootstrap Material Design generic -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/FezVrasta/bootstrap-material-design/dist/dist/bootstrap-material-design.min.css">
+    <!-- Custom styles for this template -->
+    <link href="css/custom.css" rel="stylesheet">
+    <link rel='shortcut icon' type='image/x-icon' href='icon/favicon.ico' />
+</head>
+
+<body>
+    <!-- Small modal -->
+    <div class="bmd-layout-container bmd-drawer-f-l bmd-drawer-overlay-md-down bmd-drawer-in-lg-up">
+        <header class="bmd-layout-header">
+            <div class="navbar navbar-light bg-faded">
+                <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="drawer" data-target="#my-drawer">
+                    <span class="sr-only">Toggle drawer</span>
+                    <i class="material-icons">menu</i>
+                </button>
+                <ul class="nav navbar-nav">
+                    <li class="nav-item">
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <div id="my-drawer" class="bmd-layout-drawer">
+            <header>
+                <span id="temp">Температура: 0 &#8451;</span>
+                <span id="hum">Вологість: 100%</span>
+                <span id="temp">Температура підвал: 0 &#8451;</span>
+                <span id="hum">Вологість: 100%</span>
+            </header>
+            <ul class="list-group">
+                <a class="list-group-item" href='/'><i class="material-icons" role="presentation">home</i>Освітлення</a>
+            </ul>
+        </div>
+        <main class="bmd-layout-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-10 col-lg-4">
+                        <div class="card" id="card-1">
+                            <div class="card-block">
+                                <h4 class="card-title" id="title-1">Ліхтар</h4>
+                            </div>
+                            <div class="card-footer">
+                                <a href="#" class="btn btn-primary btn-start" data-id=1 id="btn-start-1">Увімкнути</a>
+                                <a href="#" class="btn btn-primary btn-stop" data-id=1 id="btn-stop-1">Вимкнути</a>
+                                <span class="status-span">В системі помилка</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-10 col-lg-4">
+                        <div class="card" id="card-2">
+                            <div class="card-block">
+                                <h4 class="card-title" id="title-2">Освітлення</h4>
+                            </div>
+                            <div class="card-footer">
+                                <a href="#" class="btn btn-primary btn-start" data-id=2 id="btn-start-2">Увімкнути</a>
+                                <a href="#" class="btn btn-primary btn-stop" data-id=2 id="btn-stop-2">Вимкнути</a>
+                                <span class="status-span">В системі помилка</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-10 col-lg-4">
+                        <div class="card" id="card-3">
+                            <div class="card-block">
+                                <h4 class="card-title" id="title-3">Підвал</h4>
+                            </div>
+                            <div class="card-footer">
+                                <a href="#" class="btn btn-primary btn-start" data-id=3 id="btn-start-3">Увімкнути</a>
+                                <a href="#" class="btn btn-primary btn-stop" data-id=3 id="btn-stop-3">Вимкнути</a>
+                                <span class="status-span">В системі помилка</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="https://cdn.rawgit.com/HubSpot/tether/v1.3.4/dist/js/tether.min.js"></script>
+    <script src="https://cdn.rawgit.com/FezVrasta/bootstrap-material-design/dist/dist/bootstrap-material-design.iife.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+    $('body').bootstrapMaterialDesign();
+    </script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

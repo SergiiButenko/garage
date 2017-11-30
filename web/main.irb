@@ -1,0 +1,47 @@
+require 'sinatra'
+require 'json'
+require 'serialport'
+
+port = `ls /dev`.split("\n").grep(/usb|ACM/i).map{|d| "/dev/#{d}"}
+if port.any?
+ ser = SerialPort.new(port, 9600, 8, 1, SerialPort::NONE)
+end
+
+get '/' do
+  html :index
+end	
+
+
+get '/on/:id' do
+  "ON #{params['id']}!"
+  ser.write "on/#{params['id']}/\r\n"
+  responce = ser.read(25)
+  "#{responce}"
+
+  content_type :json
+  { :branches => [{:id => 1, :status => 1}, {:id => 2, :status => 1}, {:id => 3, :status => 1}] }.to_json
+end	
+
+get '/off/:id' do
+  "OFF #{params['id']}!"
+  ser.write "off/#{params['id']}/\r\n"
+   responce = ser.read(25)
+  "#{responce}"
+
+  content_type :json
+  { :branches => [{:id => 1, :status => 0}, {:id => 2, :status => 0}, {:id => 3, :status => 0}] }.to_json
+end	
+
+get '/status' do
+ "STATUS"
+  # ser.write "status/\r\n"
+  # responce = ser.read(25)
+  # "#{responce}"
+
+  content_type :json
+  { :branches => [{:id => 1, :status => 1}, {:id => 2, :status => 1}, {:id => 3, :status => 1}] }.to_json
+end
+
+def html(view)
+  File.read(File.join('views', "#{view.to_s}.html"))
+end
