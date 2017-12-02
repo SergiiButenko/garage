@@ -13,9 +13,9 @@ ports.each do |p|
   end
 end
 
-exit 1 if p.nil?
+# exit 1 if p.nil?
 
-board = Arduino.new(port)
+board = Arduino.new(ports.first)
 puts "#{board}"
 
 get '/' do
