@@ -2,6 +2,8 @@ require 'sinatra'
 require 'json'
 require "arduino"
 
+set :bind, '0.0.0.0'
+
 ports = `ls /dev`.split("\n").grep(/usb|ACM/i).map{|d| "/dev/#{d}"}
 puts "port: #{ports}"
 
