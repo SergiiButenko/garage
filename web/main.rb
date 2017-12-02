@@ -10,6 +10,7 @@ ports.each do |p|
   if p.include? 'tty'
     port = p
     break
+  end
 end
 
 exit 1 if p.nil?
