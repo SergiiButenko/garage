@@ -4,7 +4,7 @@ After=network.target
 Requires=network.target
 
 [Service]
-ExecStart=/usr/bin/ruby /var/www/garage/web/main.rb
+ExecStart=/usr/local/rvm/rubies/ruby-2.4.2/bin/ruby /var/www/garage/web/main.rb
 
 Restart=always
 RestartSec=5
