@@ -3,6 +3,8 @@ require 'json'
 require "arduino"
 
 port = `ls /dev`.split("\n").grep(/usb|ACM/i).map{|d| "/dev/#{d}"}
+puts "port: #{port}"
+
 board = Arduino.new(*port)
 puts "#{board}"
 
