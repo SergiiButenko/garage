@@ -15,24 +15,6 @@ void setup() {
 
 void loop()
 {
-  if (digitalRead(3) == HIGH){
-  }
-
-  if (digitalRead(4) == HIGH){
-  }
-
-  if (digitalRead(5) == HIGH){
-  }
-
-  if (digitalRead(6) == HIGH){
-  }
-
-
-  if(digitalRead(7) == LOW){
-  }
-  else{
-  } 
-
   if(serialStatus==0)
   {
     Serial.flush();
@@ -43,8 +25,7 @@ void loop()
   {
     if(Serial.available()>0)
     {
-      cmd = int(Serial.read()) - 48;
-
+      cmd = int(Serial.read()) - 48;      
       if(cmd==0) //set digital low
       {
         cmd_arg[0] = int(readData()) - 48;
@@ -167,5 +148,16 @@ void setupPins()
     break;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
 
 

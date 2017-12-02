@@ -35,10 +35,13 @@ get '/off/:id' do
 end	
 
 get '/status' do
- puts "STATUS"
-  
   content_type :json
   { :branches => [{:id => 1, :status => board.getState(1)}, {:id => 2, :status => board.getState(2)}, {:id => 3, :status => board.getState(3)}] }.to_json
+end
+
+get '/temp' do 
+  content_type :json
+  { :temp => {:up => Arduino_extended.temp, :down => Arduino_extended.temp_baseline}}.to_json
 end
 
 def html(view)

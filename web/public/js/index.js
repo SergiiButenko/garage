@@ -9,11 +9,10 @@ $(document).ready(function() {
                 update_branches(data);
 
                 set_status_ok();
-                setTimeout(worker2, 10 * 1000);
             },
             error: function() {
                 set_status_error();
-                setTimeout(worker2, 1000);
+                setTimeout(worker2, 4 * 1000);
             }
         });
     })();
