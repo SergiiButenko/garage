@@ -2,10 +2,20 @@ require 'sinatra'
 require 'json'
 require "arduino"
 
-port = `ls /dev`.split("\n").grep(/usb|ACM/i).map{|d| "/dev/#{d}"}
-puts "port: #{port}"
+ports = `ls /dev`.split("\n").grep(/usb|ACM/i).map{|d| "/dev/#{d}"}
+puts "port: #{ports}"
 
-board = Arduino.new(*port)
+port = nil
+ports.each |p| do
+  if p.include? 'tty'
+    port = p
+    break
+end
+
+exit 1 if p.nil?
+
+
+board = Arduino.new(port)
 puts "#{board}"
 
 get '/' do
