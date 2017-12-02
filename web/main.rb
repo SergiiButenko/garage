@@ -6,14 +6,13 @@ ports = `ls /dev`.split("\n").grep(/usb|ACM/i).map{|d| "/dev/#{d}"}
 puts "port: #{ports}"
 
 port = nil
-ports.each |p| do
+ports.each do |p|
   if p.include? 'tty'
     port = p
     break
 end
 
 exit 1 if p.nil?
-
 
 board = Arduino.new(port)
 puts "#{board}"
