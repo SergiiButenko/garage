@@ -17,6 +17,7 @@ end
 
 board = Arduino.new(ports.first)
 puts "#{board}"
+board.close
 
 get '/' do
   html :index
