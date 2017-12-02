@@ -14,10 +14,9 @@ ports.each do |p|
 end
 
 # exit 1 if p.nil?
-
+Arduino.new(ports.first).close
 board = Arduino.new(ports.first)
 puts "#{board}"
-board.close
 
 get '/' do
   html :index
