@@ -64,6 +64,7 @@ void loop()
       {
         serialStatus = 0;
       }
+
     }
   }
 }
@@ -130,6 +131,26 @@ void askCmd()
   askData();
   while(Serial.available()<=0)
   {
+
+    if (digitalRead(3) == HIGH){
+    }
+
+    if (digitalRead(4) == HIGH){
+    }
+
+    if (digitalRead(5) == HIGH){
+    }
+
+    if (digitalRead(6) == HIGH){
+    }
+
+
+    if(digitalRead(7) == LOW){
+    }
+    else{
+    } 
+
+
   }
 }
 
@@ -148,6 +169,7 @@ void setupPins()
     break;
   }
 }
+
 
 
 
