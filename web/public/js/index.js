@@ -56,6 +56,9 @@ $(document).ready(function() {
         $.ajax({
             url: '/on/' + index,
             type: "get",
+            beforeSend: function(xhr, opts) {
+                set_status_spinner();
+            },
             success: function(data) {
                 console.log('Line ' + index + ' should be actived now');
                 update_branches(data);
@@ -75,6 +78,9 @@ $(document).ready(function() {
         $.ajax({
             url: '/off/' + index,
             type: "get",
+            beforeSend: function(xhr, opts) {
+                set_status_spinner();
+            },
             success: function(data) {
                 console.log('Line ' + index + ' should be deactived now');
                 update_branches(data);
@@ -92,6 +98,9 @@ $(document).ready(function() {
     function update_branches_request() {
         $.ajax({
             url: '/status',
+            beforeSend: function(xhr, opts) {
+                set_status_spinner();
+            },
             success: function(data) {
                 update_branches(data);
             },
