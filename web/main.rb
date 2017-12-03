@@ -16,6 +16,9 @@ ports.each do |p|
   puts "FAILED"
 end
 
+
+puts "Port: #{port}"
+
 # exit 1 if p.nil?
 Arduino.new(ports.first).close
 
