@@ -7,20 +7,17 @@ set :bind, '0.0.0.0'
 ports = `ls /dev`.split("\n").grep(/usb|ACM/i).map{|d| "/dev/#{d}"}
 port = nil
 ports.each do |p|
-  puts "port #{p}"
   if p.include? 'tty'
     port = p
-    puts "PASSED"
     break
   end
   puts "FAILED"
 end
 
-
 puts "Port: #{port}"
 
-# exit 1 if p.nil?
-Arduino.new(ports.first).close
+exit 1 if port.nil?
+Arduino.new(port).close
 
 board = Arduino.new(ports.first)
 puts "#{board}"
