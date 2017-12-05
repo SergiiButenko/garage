@@ -16,8 +16,22 @@ byte relay_A = 7;
 byte relay_B = 8;
 byte relay_C = 9;
 
+byte bassement_sensor = 11;
+byte door_sensor = 12;
 
 void setup() {
+  pinMode(button_A, INPUT);
+  pinMode(button_B, INPUT);
+  pinMode(button_C, INPUT);
+  pinMode(button_D, INPUT);
+
+  pinMode(relay_A, OUTPUT);
+  pinMode(relay_B, OUTPUT);
+  pinMode(relay_C, OUTPUT);
+
+  pinMode(bassement_sensor, INPUT);
+  pinMode(door_sensor, INPUT);
+
   // connect to the serial port
   Serial.begin(115200);
   setupPins();
@@ -192,6 +206,7 @@ void setupPins()
     break;
   }
 }
+
 
 
 
