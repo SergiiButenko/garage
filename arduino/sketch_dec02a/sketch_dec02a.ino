@@ -6,6 +6,17 @@ int cmd_arg[2];
 
 int serialStatus = 0;
 
+
+byte button_A = 2;
+byte button_B = 3;
+byte button_C = 4;
+byte button_D = 5;
+
+byte relay_A = 7;
+byte relay_B = 8;
+byte relay_C = 9;
+
+
 void setup() {
   // connect to the serial port
   Serial.begin(115200);
@@ -132,24 +143,36 @@ void askCmd()
   while(Serial.available()<=0)
   {
 
-    if (digitalRead(3) == HIGH){
+    if (digitalRead(button_A) == HIGH){
+      digitalWrite(relay_A, HIGH);
     }
 
-    if (digitalRead(4) == HIGH){
+    if (digitalRead(button_B) == HIGH){
+      digitalWrite(relay_B, HIGH);
     }
 
-    if (digitalRead(5) == HIGH){
+    if (digitalRead(button_C) == HIGH){
+      digitalWrite(relay_A, HIGH);
+      digitalWrite(relay_C, HIGH);
     }
 
-    if (digitalRead(6) == HIGH){
+    if (digitalRead(button_D) == HIGH){
+      digitalWrite(relay_A, LOW);
+      digitalWrite(relay_C, LOW);
+      delay(60*1000);
     }
 
 
-    if(digitalRead(7) == LOW){
+    if(digitalRead(bassement_sensor) == LOW){
+      digitalWrite(relay_B, HIGH);      
     }
     else{
+      digitalWrite(relay_B, LOW);
     } 
 
+    if(digitalRead(door_sensor) == LOW){
+      digitalWrite(relay_A, HIGH);      
+    }
 
   }
 }
@@ -169,6 +192,8 @@ void setupPins()
     break;
   }
 }
+
+
 
 
 
