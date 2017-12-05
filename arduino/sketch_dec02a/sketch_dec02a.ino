@@ -29,8 +29,8 @@ void setup() {
   pinMode(relay_B, OUTPUT);
   pinMode(relay_C, OUTPUT);
 
-  pinMode(bassement_sensor, INPUT);
-  pinMode(door_sensor, INPUT);
+  pinMode(bassement_sensor, INPUT_PULLUP);
+  pinMode(door_sensor, INPUT_PULLUP);
 
   // connect to the serial port
   Serial.begin(115200);
