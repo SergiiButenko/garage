@@ -4,7 +4,7 @@ require 'arduino'
 
 set :bind, '0.0.0.0'
 
-ports = `ls /dev`.split("\n").grep(/usb|ACM/i).map{|d| "/dev/#{d}"}
+ports = `ls /dev`.split("\n").grep(/ACM1/i).map{|d| "/dev/#{d}"}
 port = nil
 ports.each do |p|
   if p.include? 'tty'
