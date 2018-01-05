@@ -1,0 +1,15 @@
+[Unit]
+Description=Backend part of arduino system
+After=network.target
+Requires=network.target
+
+[Service]
+ExecStart=/usr/local/bin/noip2 -U 5 -d
+
+Restart=always
+RestartSec=5
+TimeoutSec=5
+User=root
+
+[Install]
+WantedBy=multi-user.target
