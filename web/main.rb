@@ -3,6 +3,7 @@ require 'json'
 require 'arduino'
 
 set :bind, '0.0.0.0'
+set :port, 80
 
 ports = `ls /dev`.split("\n").grep(/ACM/i).map{|d| "/dev/#{d}"}
 port = nil
