@@ -1,9 +1,9 @@
-cd /var/www2
+cd /var/www
 git reset --hard
 git pull origin master
 msg=`git log -1 --pretty=%B | tr -s ' ' | tr ' ' '_'`
 
-cd /var/www2/client/services
+cd /var/www/client/services
 cp -uv * /etc/systemd/system/
 
 systemctl daemon-reload
