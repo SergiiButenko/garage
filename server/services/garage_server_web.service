@@ -4,8 +4,8 @@ After=network.target
 Requires=network.target
 
 [Service]
-WorkingDirectory=/var/www/garage/server/web
-ExecStart=/usr/bin/python3 /var/www/garage/server/web/client_web.py
+WorkingDirectory=/var/www2/server/web
+ExecStart=/usr/bin/python3 /var/www2/server/web/client_web.py
 
 Restart=always
 RestartSec=5
