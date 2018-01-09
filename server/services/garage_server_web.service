@@ -5,7 +5,7 @@ Requires=network.target
 
 [Service]
 WorkingDirectory=/var/www2/server/web
-ExecStart=/usr/bin/python3 /var/www2/server/web/client_web.py
+ExecStart=/usr/bin/python3 /var/www2/server/web/server_web.py
 
 Restart=always
 RestartSec=5
